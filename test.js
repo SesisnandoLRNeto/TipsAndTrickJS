@@ -109,3 +109,107 @@ console.log(stringRepeat); // x x x x x x
 
 var x = "x".repeat(6);
 console.log(x);
+
+
+
+
+const value = 9
+
+function bySwitch(value) {
+  switch(value){
+    case 1:
+      return '1'
+    case 2:
+      return '2'
+    case 3:
+      return '3'
+    case 4:
+      return '4'
+    case 5:
+      return '5'
+    case 6:
+      return '6'
+    case 7:
+      return '7'
+    case 8:
+      return '8'
+    case 9:
+      return '9'
+
+    default: 
+      return 'nothing'
+  }
+}
+
+function byObjectLiterals(value) {
+  const obj = {
+    1: '1',
+    2: '2',
+    3: '3',
+    4: '4',
+    5: '5',
+    6: '6',
+    7: '7',
+    8: '8',
+    9: '9',
+  }
+
+  return obj[value] || 'nothing'
+}
+
+function byIfConditions(value) {
+   if(value === 1) return '1'
+   if(value === 2) return '2'
+   if(value === 3) return '3'
+   if(value === 4) return '4'
+   if(value === 5) return '5'
+   if(value === 6) return '6'
+   if(value === 7) return '7'
+   if(value === 8) return '8'
+   if(value === 9) return '9'
+
+
+  return 'nothing'
+}
+
+
+function byFor(value) {
+  const obj = {
+    1: '1',
+    2: '2',
+    3: '3',
+    4: '4',
+    5: '5',
+    6: '6',
+    7: '7',
+    8: '8',
+    9: '9',
+  }
+
+  for(let i of Object.values(obj)) {
+    if(i === value) return obj[i]
+  }
+  return 'nothing'
+
+}
+
+
+console.log(`Testing 1`)
+console.time()
+console.log(bySwitch(value))
+console.timeEnd()
+
+console.log(`Testing 2`)
+console.time()
+console.log(byObjectLiterals(value))
+console.timeEnd()
+
+console.log(`Testing 3`)
+console.time()
+console.log(byIfConditions(value))
+console.timeEnd()
+
+console.log(`Testing 4`)
+console.time()
+console.log(byFor(value))
+console.timeEnd()
