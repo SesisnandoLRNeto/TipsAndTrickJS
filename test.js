@@ -72,11 +72,36 @@ console.log("Conversion of each value in array to type number");
 console.log(areNumbers);
 console.log(`\n`);
 
+let sortNumbers = ["201", "202", "203", "204", "205"];
+sortNumbers = sortNumbers.sort((a, b)=> a-b);//Strings arrays you need use a.localeCompare(b)
+console.log("Sort numbers in array");
+console.log(sortNumbers);
+console.log(`\n`);
+
+let removeFalsy = [201, 202, 203, 204, 205, "nando", false, undefined, "", 0, NaN, null];
+removeFalsy = removeFalsy.filter(Boolean);
+console.log("Remove falsy values in array ");
+console.log(removeFalsy);
+console.log(`\n`);
+
+let arrayNumbers = [201, 202, 203, 204, 205];
+console.log("Print the last element in array");
+console.log(areNumbers.slice(-1));
+console.log(`\n`);
+
 //4
 const userActive = {
   status: "Active",
   ratings: "5",
 };
+const names = {
+  name: 'nando',
+  age: 31,
+  role: 'admin'
+}
+
+const newObjectTogether = { ...userActive, ...names }
+
 const { status, ratings: rate } = userActive;
 console.log("Destructing a Object");
 console.log(status, rate);
@@ -96,9 +121,8 @@ console.log(`\n`);
 
 console.log("Another tips");
 
-/* Default approach */
-Math.pow(10, 10); //100
 
+Math.pow(10, 10); //100
 10 ** 10; // 100
 
 let stringRepeat = "x";
@@ -109,7 +133,6 @@ console.log(stringRepeat); // x x x x x x
 
 var x = "x".repeat(6);
 console.log(x);
-
 
 
 
@@ -213,3 +236,12 @@ console.log(`Testing 4`)
 console.time()
 console.log(byFor(value))
 console.timeEnd()
+
+/*
+Disable right click in HTML
+
+<body oncontextmenu="return false">
+    <div></div>
+</body>
+
+*/
